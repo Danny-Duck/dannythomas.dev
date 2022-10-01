@@ -12,6 +12,9 @@
   --qwik-light-purple: #ac7ff4;
   --qwik-dark-purple: #713fc2;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background-color: #fafafa;
