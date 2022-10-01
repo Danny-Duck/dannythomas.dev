@@ -6,38 +6,14 @@
  *
  */
 
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   background-color: #fafafa;
-  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Hack', monospace;
   padding: 20px 20px 40px 20px;
-}
-
-main {
-  max-width: 760px;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px 0px 130px -50px var(--qwik-light-purple);
-  overflow: hidden;
-}
-
-h1,
-h2 {
-  margin: 0 0 5px 0;
-}
-
-.lightning {
-  filter: hue-rotate(180deg);
 }
 
 section {
