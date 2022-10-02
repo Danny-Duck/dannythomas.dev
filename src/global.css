@@ -35,15 +35,6 @@ li::marker {
   color: var(--qwik-light-blue);
 }
 
-a,
-a:visited {
-  color: var(--qwik-dark-blue);
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 table.commands {
   margin: 0 0 30px 0;
 }
