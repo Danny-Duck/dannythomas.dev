@@ -21,7 +21,7 @@ const REGEXP_DATE = /@ (.*$)/gim
 
 const markdownParser = (text) => {
   const toHTML = text
-    .replace(REGEXP_H1, '') // h3 tag
+    .replace(REGEXP_H1, '') // remove title because the buttons define the title
     .replace(REGEXP_H2, '<h2 class="text-lg">$1</h2>')
     .replace(REGEXP_H3, '<h3 class="">$1</h3>')
 
