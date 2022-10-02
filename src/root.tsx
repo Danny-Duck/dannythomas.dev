@@ -21,7 +21,10 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <RouterHead />
       </head>
-      <body lang="en" class="container min-h-screen min-w-full flex flex-col">
+      <body
+        lang="en"
+        class="container min-h-screen min-w-full flex flex-col justify-between"
+      >
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
