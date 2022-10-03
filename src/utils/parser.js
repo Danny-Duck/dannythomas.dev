@@ -42,8 +42,14 @@ const markdownParser = (text) => {
 
 const args = process.argv.slice(2)
 
-const fileHeaderString =
+const oldFileHeaderString =
   'export type Work = { title: string, content:string}; export const works:Work[] ='
+
+const fileHeaderString = `
+export type Work = { title: string; content: string };
+export type Section = { title: string; content: Work[] }
+export const sections: Section[] = 
+  `
 
 const parseFile = (path) => {
   const data = fs.readFileSync(path, 'utf8')
@@ -53,9 +59,37 @@ const parseFile = (path) => {
   }
 }
 
-const parseFiles = (paths) => paths.map((path) => parseFile(path))
+const parseSectionTitle = (path) => path.match(/\.\/src\/content\/(.*)\/.*/)[1]
 
-fs.writeFileSync('./src/works/_output.ts', fileHeaderString)
-fs.appendFileSync('./src/works/_output.ts', JSON.stringify(parseFiles(args)))
+const parseFiles = (paths) =>
+  paths.forEach((path) => {
+    const title = parseSectionTitle(path)
+    if (path.match('_')) {
+      return
+    }
+    const content = parseFile(path)
+    const sectionIndex = sections.findIndex(
+      (section) => section.title === title
+    )
+
+    if (sectionIndex !== -1) {
+      sections[sectionIndex].content.push(content)
+    } else {
+      sections.push({ title, content: [content] })
+    }
+  })
+
+const sections = []
+
+parseFiles(args)
+
+sections.forEach(({ title, content }) => {
+  const path = `./src/content/${title}/_output.ts`
+  fs.writeFileSync(
+    path,
+    `export type Work = { title: string, content:string}; export const ${title}:Work[] =`
+  )
+  fs.appendFileSync(path, JSON.stringify(content))
+})
 
 /* console.log(parseFiles(args)) */

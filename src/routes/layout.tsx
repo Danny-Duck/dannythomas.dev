@@ -12,7 +12,7 @@ export default component$(() => {
       <main class="p-5 w-full lg:w-3/4 xl:w-1/2 self-center flex flex-col">
         <Slot />
       </main>
-      <footer class={'flex w-full justify-center flex-col'}>
+      <footer class={'flex w-full justify-center flex-col place-self-end'}>
         <h2 class="text-xl">Socials</h2>
         <p class="text-sm">You can find me here</p>
         <div class="grid-cols-3 grid w-auto self-center">

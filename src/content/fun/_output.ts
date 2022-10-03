@@ -1,0 +1,1 @@
+export type Work = { title: string, content:string}; export const fun:Work[] =[{"title":"Memes","content":"<p><p class=\"text-orange-500\">03/10/2022</p><p>All the great memes I know</p></p>"}]
