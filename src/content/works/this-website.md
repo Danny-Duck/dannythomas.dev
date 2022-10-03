@@ -1,6 +1,6 @@
 # This website
 
-@ 02/10/2022
+@@
 
 What created in a weekend, with love and a little bit of css
 

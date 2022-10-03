@@ -17,9 +17,9 @@ const REGEXP_CODE = /`(.*?)`/g
 const REGEXP_STRONG = /(\*\*|__)(.*?)(\*?)\1/g
 const REGEXP_DEL = /\~\~(.*?)\~\~/g
 const REGEXP_Q = /\:\"(.*?)\"\:/g
-const REGEXP_DATE = /@ (.*$)/gim
+const REGEXP_META_MARKER = /@@/
 
-const markdownParser = (text) => {
+const markdownParser = (text, lastEdited, createdAt) => {
   const toHTML = text
     .replace(REGEXP_H1, '') // remove title because the buttons define the title
     .replace(REGEXP_H2, '<h2 class="text-lg">$1</h2>')
@@ -35,27 +35,26 @@ const markdownParser = (text) => {
       '<a target="_blank" class="text-blue-600 hover:underline" href="$2">$1</a>'
     )
     .replace(REGEXP_IMAGE, '<img src="$1" />')
-    .replace(REGEXP_DATE, '<p class="text-orange-500">$1</p>')
+    .replace(
+      REGEXP_META_MARKER,
+      `<p class="text-sm">Last edited: <span class="text-orange-500">${lastEdited}</span></p> <p class="text-sm">Created at: <span class="text-green-500">${createdAt}</span></p>`
+    )
 
   return toHTML.trim() // using trim method to remove any white space
 }
 
 const args = process.argv.slice(2)
 
-const oldFileHeaderString =
-  'export type Work = { title: string, content:string}; export const works:Work[] ='
-
-const fileHeaderString = `
-export type Work = { title: string; content: string };
-export type Section = { title: string; content: Work[] }
-export const sections: Section[] = 
-  `
-
 const parseFile = (path) => {
   const data = fs.readFileSync(path, 'utf8')
+  const stats = fs.statSync(path, 'utf8')
   return {
     title: data.match(REGEXP_H1, '$1')[0].replace('# ', ''),
-    content: markdownParser(data),
+    content: markdownParser(
+      data,
+      stats.mtime.toDateString(),
+      stats.birthtime.toDateString()
+    ),
   }
 }
 
