@@ -21,12 +21,11 @@ export const WorksList = component$(({ title, subtitle, works }: Props) => {
     <Section>
       <H2>{title}</H2>
       <SubHeading>{subtitle}</SubHeading>
-      <ul class="flex-col">
+      <ul class="flex-col list-outside">
         {works.map(({ title, content }, index) => {
           const isSelected = index === state.selected
           return (
             <li>
-              |
               <Button
                 isSelected={mutable(isSelected)}
                 // @ts-ignore
@@ -35,9 +34,7 @@ export const WorksList = component$(({ title, subtitle, works }: Props) => {
                 {title}
               </Button>
               <div
-                class={`bg-gray-100 m-2 p-3 ${
-                  isSelected ? 'transition' : 'hidden'
-                }`}
+                class={`bg-gray-100 m-2 p-3 ${isSelected ? '' : 'hidden'}`}
                 dangerouslySetInnerHTML={content}
               ></div>
             </li>
