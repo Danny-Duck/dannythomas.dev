@@ -2,7 +2,9 @@
 
 @@
 
-What created in a weekend, with love and a little bit of css
+What created in a weekend, with love and a little bit of css. I wrote a little markdown parser to convert markdown elements to jsx elements with tailwind classes
+
+[Repo](https://github.com/Danny-Duck/dannythomas.dev/)
 
 ## Tools
 
@@ -11,21 +13,6 @@ What created in a weekend, with love and a little bit of css
 - Hack font
 - Cloudflare pages
 
-- Software
+## Design Influence
 
-## list
-
-- fireware
-- Can I just use a firmware programmer and not have to have anything running on the machine?
-
-* design
-* How many keys?
-* How many keys does a normal keyboard use? I have an 84 key layout now
-* Ortho-Linear or Columnar?
-* configuration - Can I change key layouts progammatically? Qwerty to Dvorak? as I understand atm, yes - Keyboard layout - [Colemak](https://colemak.com/), Dvorak, Qwerty?
-
-* [ ] USB-C
-* [ ] Hot swappable keycap ports
-* [ ] Split
-
-[a link title](www.link.com)
+- [A minimalist blog](https://blog.framer.wiki/) / [another look](https://dribbble.com/shots/18432052-Framer-Template-Blog)
