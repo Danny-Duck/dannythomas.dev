@@ -15,7 +15,11 @@ export const IndexHeader = component$(() => {
             I'm currently in Melbourne, Australia and working at Culture Amp.
           </p>
         </div>
-        <img src="/me.webp" class={'w-48 h-48'} />
+        <img
+          src="/me.webp"
+          alt="Danny's smiling Apple Memoji"
+          class={'w-48 h-48'}
+        />
       </div>
 
       <div class={'flex items-center lg:hidden flex-col self-center md:w-3/4'}>
