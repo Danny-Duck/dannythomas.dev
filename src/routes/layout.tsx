@@ -5,7 +5,7 @@ export default component$(() => {
   const socials = [
     { label: 'Github', href: 'https://github.com/Danny-Duck' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/dannylowater/' },
-    { label: 'Email', href: '' },
+    { label: 'Email', href: 'mailto:hi@dannythomas.dev' },
   ]
   return (
     <>
