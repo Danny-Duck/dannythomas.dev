@@ -6,7 +6,7 @@ export const Button = component$(({ onClick$, isSelected }: Props) => {
   return (
     <button
       class={`ml-2 pr-2 hover:underline text-left ${
-        isSelected ? 'text-orange-600' : ''
+        isSelected ? 'text-orange-500' : ''
       }`}
       // eslint-disable-next-line
       onClick$={onClick$}

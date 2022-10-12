@@ -33,7 +33,7 @@ const markdownParser = (text, lastEdited, createdAt) => {
     .replace(REGEXP_IMAGE, '<img alt="$1" src="$2"/>')
     .replace(
       REGEXP_LINK,
-      '<a target="_blank" class="text-blue-600 hover:underline" href="$2">$1</a>'
+      '<a target="_blank" class="text-blue-300 hover:underline" href="$2">$1</a>'
     )
     .replace(
       REGEXP_META_MARKER,

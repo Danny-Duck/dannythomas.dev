@@ -19,7 +19,8 @@ export default component$(() => {
           {socials.map(({ label, href }) => (
             <a
               target="_blank"
-              class={'text-sm text-blue-600 hover:underline'}
+              /* style={{ color: 'rgb(112 156 216)' }} */
+              class={'text-sm hover:underline text-blue-300'}
               href={href}
             >
               {label}

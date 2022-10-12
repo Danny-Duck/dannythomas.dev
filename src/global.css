@@ -11,8 +11,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #fafafa;
+  background-color: #212223;
   font-family: 'Hack', monospace;
+  color: rgb(231 229 226);
 }
 
 ul {
