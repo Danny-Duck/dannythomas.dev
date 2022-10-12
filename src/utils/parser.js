@@ -30,11 +30,11 @@ const markdownParser = (text, lastEdited, createdAt) => {
     .replace(REGEXP_CODE, '<code>$1</code>')
     .replace(REGEXP_STRONG, '<strong>$1</strong>')
 
+    .replace(REGEXP_IMAGE, '<img alt="$1" src="$2"/>')
     .replace(
       REGEXP_LINK,
       '<a target="_blank" class="text-blue-600 hover:underline" href="$2">$1</a>'
     )
-    .replace(REGEXP_IMAGE, '<img src="$1" />')
     .replace(
       REGEXP_META_MARKER,
       `<p class="text-sm">Last edited: <span class="text-orange-500">${lastEdited}</span></p> <p class="text-sm">Created at: <span class="text-green-500">${createdAt}</span></p>`
