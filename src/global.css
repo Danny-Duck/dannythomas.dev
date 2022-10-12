@@ -11,7 +11,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #262829;
+  background-color: rgb(19 21 22);
   font-family: 'Hack', monospace;
   color: rgb(231 229 226);
 }

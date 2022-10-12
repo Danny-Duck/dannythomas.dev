@@ -34,7 +34,7 @@ export const WorksList = component$(({ title, subtitle, works }: Props) => {
                 {title}
               </Button>
               <div
-                style={{ background: 'rgb(50 51 52)' }}
+                style={{ background: 'rgb(38 42 43)' }}
                 class={`p-1 mt-2 mb-2 ${isSelected ? '' : 'hidden'}`}
                 dangerouslySetInnerHTML={content}
               ></div>
