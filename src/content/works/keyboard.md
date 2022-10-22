@@ -11,3 +11,7 @@ I want to design my own. Based on the apple magic keyboard, specifically how low
 ## References
 
 - A split ortho [keyboard design](https://github.com/TeXitoi/keyseebee) with pure rust firmware
+- A nice and polished corne-like [keyboard](https://lowprokb.ca/products/corne-ish-zen)
+- An [example](https://www.keebtalk.com/t/kailh-x-switches/12151) of someone using Kailh X switches
+- An ultra low-profile [keyboard](https://kbd.news/Synx42-1262.html)
+- An interesting [MC series](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_nrf52%2Fstruct%2Fnrf52.html)
