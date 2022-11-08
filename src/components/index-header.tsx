@@ -3,7 +3,9 @@ import { component$ } from '@builder.io/qwik'
 export const IndexHeader = component$(() => {
   const hi = "Hi I'm Danny,"
   const introCopy = `I develop things for the web, tinker with electronics and I really enjoy solving problems.
-    I'm currently working on a few projects, one of which is this site. `
+    I'm currently working on a few projects, one of which is this site.`
+  const ctaCopy = `If you're looking for an online solution, I'm always open to collaborate contact me `
+
   return (
     <>
       <div
@@ -12,6 +14,16 @@ export const IndexHeader = component$(() => {
         <div class={'pt-10'}>
           <h1 class="text-2xl">{hi}</h1>
           <p class="whitespace-pre-line">{introCopy}</p>
+          <p class="whitespace-pre-line">
+            {ctaCopy}
+            <a
+              target="_blank"
+              class={'text-sm hover:underline text-blue-300'}
+              href={'mailto:hi@dannythomas.dev'}
+            >
+              here
+            </a>
+          </p>
         </div>
         <img
           src="/me.webp"
