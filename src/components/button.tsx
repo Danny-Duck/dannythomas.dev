@@ -1,17 +1,12 @@
-import { component$, PropFunction, Slot } from '@builder.io/qwik'
+type Props = {
+  isSelected: boolean
+} & React.ComponentProps<'button'>
 
-type Props = { onClick$: PropFunction<() => void>; isSelected: boolean }
-
-export const Button = component$(({ onClick$, isSelected }: Props) => {
-  return (
-    <button
-      class={`ml-2 pr-2 hover:underline text-left ${
-        isSelected ? 'text-orange-500' : ''
-      }`}
-      // eslint-disable-next-line
-      onClick$={onClick$}
-    >
-      <Slot />
-    </button>
-  )
-})
+export const Button = ({ isSelected, className, ...props }: Props) => (
+  <button
+    {...props}
+    className={`ml-2 pr-2 hover:underline text-left ${
+      isSelected ? 'text-orange-500' : ''
+    } ${className}`}
+  />
+)

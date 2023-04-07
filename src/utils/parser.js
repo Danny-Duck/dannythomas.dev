@@ -45,7 +45,7 @@ const markdownParser = (text, lastEdited, createdAt) => {
 
 const args = process.argv.slice(2)
 
-const parseFile = (path) => {
+const parseFile = path => {
   const data = fs.readFileSync(path, 'utf8')
   const stats = fs.statSync(path, 'utf8')
   return {
@@ -58,18 +58,16 @@ const parseFile = (path) => {
   }
 }
 
-const parseSectionTitle = (path) => path.match(/\.\/src\/content\/(.*)\/.*/)[1]
+const parseSectionTitle = path => path.match(/\.\/src\/content\/(.*)\/.*/)[1]
 
-const parseFiles = (paths) =>
-  paths.forEach((path) => {
+const parseFiles = paths =>
+  paths.forEach(path => {
     const title = parseSectionTitle(path)
     if (path.match('_')) {
       return
     }
     const content = parseFile(path)
-    const sectionIndex = sections.findIndex(
-      (section) => section.title === title
-    )
+    const sectionIndex = sections.findIndex(section => section.title === title)
 
     if (sectionIndex !== -1) {
       sections[sectionIndex].content.push(content)

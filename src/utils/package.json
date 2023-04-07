@@ -1,6 +1,3 @@
 {
-  "type": "module",
-  "dependencies": {
-    "markdown-regex": "^1.2.0"
-  }
+  "type": "module"
 }
