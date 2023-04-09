@@ -8,7 +8,7 @@ export const IndexHeader = () => {
 
   return (
     <>
-      <div className={'hidden lg:flex justify-between items-center'}>
+      <div className={'flex justify-between items-center'}>
         <div className={'pt-10'}>
           <h1 className="text-2xl">{hi}</h1>
           <p className="whitespace-pre-line">{introCopy}</p>
@@ -32,19 +32,19 @@ export const IndexHeader = () => {
         />
       </div>
 
-      <div className={'flex items-center lg:hidden flex-col'}>
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl">{hi}</h1>
-          <Image
-            width={500}
-            height={500}
-            src="/me.webp"
-            alt=""
-            className={'w-48 h-48'}
-          />
-        </div>
-        <p className="whitespace-pre-line">{introCopy}</p>
-      </div>
+      {/* <div className={'flex items-center lg:hidden flex-col'}> */}
+      {/*   <div className="flex items-center justify-between"> */}
+      {/*     <h1 className="text-2xl">{hi}</h1> */}
+      {/*     <Image */}
+      {/*       width={500} */}
+      {/*       height={500} */}
+      {/*       src="/me.webp" */}
+      {/*       alt="" */}
+      {/*       className={'w-48 h-48'} */}
+      {/*     /> */}
+      {/*   </div> */}
+      {/*   <p className="whitespace-pre-line">{introCopy}</p> */}
+      {/* </div> */}
     </>
   )
 }

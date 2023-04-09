@@ -29,11 +29,12 @@ export const WorksList = ({ title, subtitle, works }: Props) => {
               >
                 {title}
               </Button>
-              <div
-                /* style={{ background: 'rgb(38 42 43)' }} */
-                className={`my-2 bg-[#262a2b] ${isSelected ? '' : 'hidden'}`}
-                dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
+              {isSelected && (
+                <div
+                  className={`my-2 bg-[#262a2b] `}
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              )}
             </li>
           )
         })}
